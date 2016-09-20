@@ -14,10 +14,19 @@ bool isPrime(int n) {
     return true;
 }
 
+/**
+ * Given a formula of the form
+ * n^2 + an + b, determine how many
+ * consecutive primes it generates
+ * for 0 <= n.
+ * 
+ * Returns the number of consecutive
+ * primes generated
+ */
 int runOfPrimes(int a, int b) {
-    int c = 0;
-    while (isPrime(c*c + a*c + b)) c++;
-    return c - 1;
+    int n = 0;
+    while (isPrime(n*n + a*n + b)) n++;
+    return n - 1; // Since the last n++ overshot.
 }
 
 int main() {
