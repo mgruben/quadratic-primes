@@ -21,6 +21,19 @@ int runOfPrimes(int a, int b) {
 }
 
 int main() {
-    cout << runOfPrimes(-79, 1601) << endl;
+    int longestRun = 0;
+    int bestA;
+    int bestB;
+    for (int a = -999; a < 1000; a++) {
+        for (int b = -1000; b <= 1000; b++) {
+            int thisRun = runOfPrimes(a, b);
+            if (thisRun > longestRun) {
+                longestRun = thisRun;
+                bestA = a;
+                bestB = b;
+            }
+        }
+    }
+    cout << bestA * bestB << endl;
     return 0;
 }
