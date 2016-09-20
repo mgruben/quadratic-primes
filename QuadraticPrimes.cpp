@@ -14,6 +14,13 @@ bool isPrime(int n) {
     return true;
 }
 
+int runOfPrimes(int a, int b) {
+    int c = 0;
+    while (isPrime(c*c + a*c + b)) c++;
+    return c - 1;
+}
+
 int main() {
+    cout << runOfPrimes(-79, 1601) << endl;
     return 0;
 }
